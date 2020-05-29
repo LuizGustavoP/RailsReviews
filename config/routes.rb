@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :platforms
+  resources :publishers
+  resources :developers
   get 'hdream/index'
   resources :games
   root 'hdream#index'

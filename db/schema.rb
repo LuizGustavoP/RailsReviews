@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200528181930) do
+ActiveRecord::Schema.define(version: 20200529192949) do
 
   create_table "apelidos", force: :cascade do |t|
     t.string "nome"
     t.string "apelido"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "developers", force: :cascade do |t|
+    t.string "nome"
+    t.string "descr"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -25,6 +32,25 @@ ActiveRecord::Schema.define(version: 20200528181930) do
     t.string "pub"
     t.float "score"
     t.string "platform"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "publisher_id"
+    t.integer "platform_id"
+    t.integer "developer_id"
+    t.index ["developer_id"], name: "index_games_on_developer_id"
+    t.index ["platform_id"], name: "index_games_on_platform_id"
+    t.index ["publisher_id"], name: "index_games_on_publisher_id"
+  end
+
+  create_table "platforms", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "publishers", force: :cascade do |t|
+    t.string "nome"
+    t.string "descr"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,16 @@
+= form_for @developer do |f|
+  - if @developer.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@developer.errors.count, "error")} prohibited this developer from being saved:"
+      %ul
+        - @developer.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :nome
+    = f.text_field :nome
+  .field
+    = f.label :descr
+    = f.text_field :descr
+  .actions
+    = f.submit 'Save'

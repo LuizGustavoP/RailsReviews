@@ -1,0 +1,9 @@
+%h1 New platform
+= form_with model: @platform, local: true  do |f|
+  %table
+    %tr
+      %td
+        = f.label :nome
+      %td
+        = f.text_field :nome
+  = f.submit
