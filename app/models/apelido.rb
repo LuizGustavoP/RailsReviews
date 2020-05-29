@@ -1,0 +1,2 @@
+class Apelido < ApplicationRecord
+end

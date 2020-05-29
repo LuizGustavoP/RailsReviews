@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  dev: MyString
+  pub: MyString
+  score: 1.5
+  platform: MyString
+
+two:
+  nome: MyString
+  dev: MyString
+  pub: MyString
+  score: 1.5
+  platform: MyString
