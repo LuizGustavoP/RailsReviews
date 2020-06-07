@@ -1,3 +1,8 @@
 %h1 Games cadastrados
 - @games.each do |gm|
    %p "#{gm.nome} Desenvolvido por #{gm.dev}"
+
+%h1 Usuários cadastrados
+- @users.each do |usr|
+   %p "#{usr.nome}"
+   %p "#{usr.email}"
