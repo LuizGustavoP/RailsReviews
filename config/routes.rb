@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   get 'sessions/new'
-
+  resources :games
   resources :users
   resources :platforms
   resources :publishers
   resources :developers
   get 'hdream/index'
-  resources :games
+
   root 'hdream#index'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

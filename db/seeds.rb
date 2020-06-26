@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+games = Game.create({nome: 'Devil May Cry', dev: Capcom, pub: Capcom, platform: PS4})

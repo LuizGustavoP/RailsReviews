@@ -1,24 +1,12 @@
 %h1 New Game
-= form_with model: @game, local: true  do |f|
-  %table
-    %tr
-      %td
-        = f.label :nome
-      %td
-        = f.text_field :nome
-    %tr
-      %td
-        = f.label :Developer
-      %td
-        = select('Developer', :developer_id,  Developer.all.collect {|p| [p.nome,p.id]})
-    %tr
-      %td 
-        = f.label :Publisher
-      %td
-        = select('Publisher', :publisher_id,  Publisher.all.collect {|p| [p.nome,p.id]})
-    %tr
-      %td
-        = f.label :Platform
-      %td
-        = select('Platform', :platform_id,  Platform.all.collect {|p| [p.nome,p.id]})
+%p
+ = form_with scope: :game, url: games_path, local: true  do |f|
+  = f.label :nome
+  = f.text_field :nome
+  = f.label :dev
+  = f.text_field :dev
+  = f.label :pub  
+  = f.text_field :pub
+  = f.label :platform
+  = f.text_field :platform
   = f.submit

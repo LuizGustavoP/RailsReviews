@@ -1,0 +1,6 @@
+%h1 Games cadastrados
+- @games.each do |gm|
+   %p
+   =link_to gm.nome, '/games/'+gm.id.to_s
+
+
