@@ -1,0 +1,20 @@
+%p#notice= notice
+
+%p
+  %b Game:
+  - c = Game.find(@preview.game_id).nome
+  = c
+  
+%p
+  %b Titulo:
+  = @preview.titulo
+%p
+  %b Score:
+  = @preview.score
+%p
+  %b Review:
+  = @preview.review
+
+= link_to 'Edit', edit_preview_path(@preview)
+\|
+= link_to 'Back', :controller => 'previews', :action => 'index', :id => @preview.game_id

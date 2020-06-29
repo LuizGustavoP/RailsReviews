@@ -1,0 +1,20 @@
+%p#notice= notice
+
+%p
+  %b Game:
+  - c = Game.find(@oreview.game_id).nome
+  = c
+  
+%p
+  %b Titulo:
+  = @oreview.titulo
+%p
+  %b Score:
+  = @oreview.score
+%p
+  %b Review:
+  = @oreview.review
+
+= link_to 'Edit', edit_oreview_path(@oreview)
+\|
+= link_to 'Back', :controller => 'oreviews', :action => 'index', :id => @oreview.game_id

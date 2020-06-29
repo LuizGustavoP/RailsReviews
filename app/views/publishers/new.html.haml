@@ -1,0 +1,14 @@
+%h1 New publisher
+= form_with model: @publisher, local: true  do |f|
+  %table
+    %tr
+      %td
+        = f.label :nome
+      %td
+        = f.text_field :nome
+    %tr
+      %td
+        = f.label :descr
+      %td
+        = f.text_field :descr
+  = f.submit

@@ -1,0 +1,28 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @game.nome
+%p
+  %b Site score:
+  = @game.score
+%p
+  %b Developer:
+  - c = Developer.find(@game.developer_id).nome
+  = c
+%p
+  %b Publisher:
+  - d = Publisher.find(@game.publisher_id).nome
+  = d
+%p
+  %b Platform:
+  - c = Platform.find(@game.platform_id).nome
+  = c
+
+= link_to 'Review', :controller => 'previews', :action => 'new', :id => @game.id
+= link_to 'See Public Reviews', :controller => 'previews', :action => 'index', :id => @game.id
+= link_to 'See Site Review', :controller => 'oreviews', :action => 'index', :id => @game.id
+= link_to 'Edit', edit_game_path(@game)
+\|
+= link_to 'Back', games_path
+

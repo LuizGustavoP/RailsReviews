@@ -1,0 +1,7 @@
+%h1 Editing oreview
+
+= render 'form'
+
+= link_to 'Show', @oreview
+\|
+= link_to 'Back', :controller => 'oreviews', :action => 'index', :id => @oreview.game_id

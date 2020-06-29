@@ -1,0 +1,21 @@
+= form_for @game do |f|
+  - if @game.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@game.errors.count, "error")} prohibited this game from being saved:"
+      %ul
+        - @game.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :nome
+    = f.text_field :nome
+  .field
+    = f.label :score
+    = f.text_field :score
+  .actions
+    = select('game', :developer_id,  Developer.all.collect {|dev| [dev.nome, dev.id]})
+  .actions
+    = select('game', :publisher_id,  Publisher.all.collect {|pub| [pub.nome, pub.id]})
+  .actions
+    = select('game', :platform_id,  Platform.all.collect {|plat| [plat.nome, plat.id]})
+    = f.submit 'Save'

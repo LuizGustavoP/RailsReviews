@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyString
+  score: 1.5
+  review: MyString
+
+two:
+  titulo: MyString
+  score: 1.5
+  review: MyString

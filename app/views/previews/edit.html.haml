@@ -1,0 +1,7 @@
+%h1 Editing preview
+
+= render 'form'
+
+= link_to 'Show', @preview
+\|
+= link_to 'Back', :controller => 'previews', :action => 'index', :id => @preview.game_id

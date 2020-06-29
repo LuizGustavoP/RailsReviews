@@ -1,0 +1,30 @@
+%h1 Listing oreviews
+%p
+  %b Game:
+  - c = Game.find(@id).nome
+  = c
+  
+%table
+  %thead
+    %tr
+      %th Titulo
+      %th Score
+      %th Review
+      %th
+      %th
+      %th
+
+  %tbody
+    - @oreviews.each do |oreview|
+      %tr
+        %td= oreview.titulo
+        %td= oreview.score
+        %td= oreview.review
+        %td= oreview.game_id
+        %td= link_to 'Show', oreview
+        %td= link_to 'Edit', edit_preview_path(oreview)
+        %td= link_to 'Destroy', oreview, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Oreview', new_oreview_path
