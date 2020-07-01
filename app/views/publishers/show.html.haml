@@ -6,7 +6,8 @@
 %p
   %b Descr:
   = @publisher.descr
-
-= link_to 'Edit', edit_publisher_path(@publisher)
+  
+-if current_user.admin?
+  = link_to 'Edit', edit_publisher_path(@publisher)
 \|
 = link_to 'Back', publishers_path

@@ -4,25 +4,34 @@
   - c = Game.find(@id).nome
   = c
   
+%p
+  %b Public Score:
+  - x = 0
+  - m = 0
+  - @previews.select{ |p| p[:game_id] == @id.to_i }.each do |preview|
+    -x+=1
+    -m+=preview.score
+  =m/x
+  
 %table
   %thead
     %tr
       %th Titulo
       %th Score
       %th Review
+      %th 
       %th
       %th
-      %th
-
   %tbody
-    - @previews.each do |preview|
+    - @previews.select{ |p| p[:game_id] == @id.to_i }.each do |preview|
       %tr
         %td= preview.titulo
         %td= preview.score
         %td= preview.review
         %td= preview.game_id
         %td= link_to 'Show', preview
-        %td= link_to 'Edit', edit_preview_path(preview)
-        %td= link_to 'Destroy', preview, method: :delete, data: { confirm: 'Are you sure?' }
+        -if current_user.id == preview.id
+          %td= link_to 'Edit', edit_preview_path(preview)
+          %td= link_to 'Destroy', preview, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br

@@ -74,6 +74,6 @@ class PreviewsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def preview_params
-      params.require(:preview).permit(:titulo, :score, :review, :game_id)
+      params.require(:preview).permit(:titulo, :score, :review, :game_id, :userid)
     end
 end

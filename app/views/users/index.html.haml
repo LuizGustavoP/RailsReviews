@@ -1,0 +1,19 @@
+%h1 Listing users
+%table
+  %thead
+    %tr
+      %th User
+      %th Perfil
+      %th Ban
+      %th 
+      %th
+      %th
+  %tbody
+    -@users = User.all
+    -@users.each do |u|
+      %tr
+        %td= u.email
+        %td= link_to 'Show', :controller => 'users', :action => 'show', :id => u.id
+        %td= link_to 'Destroy', u, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br

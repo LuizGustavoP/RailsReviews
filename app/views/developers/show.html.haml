@@ -6,7 +6,8 @@
 %p
   %b Descr:
   = @developer.descr
-
-= link_to 'Edit', edit_developer_path(@developer)
+  
+-if current_user.admin?
+  = link_to 'Edit', edit_developer_path(@developer)
 \|
 = link_to 'Back', developers_path

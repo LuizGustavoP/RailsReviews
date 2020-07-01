@@ -1,0 +1,22 @@
+%h1 Perfil
+%p
+  %b Email:
+  - @us = User.find(@id)
+  - c = @us.email
+  = c
+
+-if current_user.admin?
+  = form_for @us do |f|
+    -if @us.admin == false then
+      .field
+      = f.hidden_field :admin, :value => true
+      .actions
+      = f.submit 'Make Admin'
+    -else
+      .field
+      = f.hidden_field :admin, :value => false
+      .actions
+      = f.submit 'Remove Admin' 
+   
+\|
+= link_to 'Back', '/users'

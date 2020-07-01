@@ -22,9 +22,9 @@
         %td= oreview.review
         %td= oreview.game_id
         %td= link_to 'Show', oreview
-        %td= link_to 'Edit', edit_preview_path(oreview)
+        %td= link_to 'Edit', edit_oreview_path(oreview)
         %td= link_to 'Destroy', oreview, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
-
-= link_to 'New Oreview', new_oreview_path
+-if current_user.admin?
+  = link_to 'New Oreview', new_oreview_path

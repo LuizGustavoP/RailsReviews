@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
   resources :oreviews
   resources :prs
   resources :ors
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
   resources :publishers
   resources :developers
   get 'hdream/index'
-
+  match '/users/:id',     to: 'users#show',       via: 'get'
   root 'hdream#index'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

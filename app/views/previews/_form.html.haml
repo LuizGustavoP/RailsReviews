@@ -17,5 +17,7 @@
     = f.text_field :review
   .field
     = f.hidden_field :game_id, :value => @id
+  .field
+    = f.hidden_field :userid, :value => current_user.id
   .actions
     = f.submit 'Save'
