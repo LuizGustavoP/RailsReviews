@@ -11,6 +11,7 @@ class OreviewsController < ApplicationController
   # GET /oreviews/1
   # GET /oreviews/1.json
   def show
+    @oreviews = Oreview.all
     @id = params[:id]
   end
 
@@ -58,10 +59,9 @@ class OreviewsController < ApplicationController
   # DELETE /oreviews/1
   # DELETE /oreviews/1.json
   def destroy
-    @id = @oreview.game_id
     @oreview.destroy
     respond_to do |format|
-      format.html { redirect_to '/oreviews?id='+@id.to_s, notice: 'Oreview was successfully destroyed.' }
+      format.html { redirect_to '/oreviews'}
       format.json { head :no_content }
     end
   end
@@ -69,7 +69,8 @@ class OreviewsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_oreview
-      @oreview = Oreview.find(params[:id])
+      @id = params[:id]
+      @oreview = Oreview.find_by(game_id: @id.to_i)
     end
 
     # Only allow a list of trusted parameters through.

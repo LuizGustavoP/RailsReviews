@@ -14,7 +14,7 @@
 %p
   %b Review:
   = @preview.review
--if current_user.id == preview.id
+-if current_user.id == @preview.id
   = link_to 'Edit', edit_preview_path(@preview)
 \|
 = link_to 'Back', :controller => 'previews', :action => 'index', :id => @preview.game_id

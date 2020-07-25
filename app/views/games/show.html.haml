@@ -21,7 +21,7 @@
 
 = link_to 'Write Review', :controller => 'previews', :action => 'new', :id => @game.id
 = link_to 'See Public Reviews', :controller => 'previews', :action => 'index', :id => @game.id
-= link_to 'See Site Review', '/oreviews/'+@game.id.to_s
+= link_to 'See Site Review', :controller => 'oreviews', :action => 'show', :id => @game.id
 -if current_user.admin?
   = link_to 'Edit', edit_game_path(@game)
   = link_to 'Write Site Review', :controller => 'oreviews', :action => 'new', :id => @game.id
