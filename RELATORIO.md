@@ -11,6 +11,13 @@ Este website Rails é um sistema para review colaborativo de games. O intuito é
 No banco de dados, cada jogo terá um publisher, as plataformas onde roda e os desenvolvedores. Cada usuário terá um username, um e-mail e uma senha.  
 
 ## Processo
+1.0 (f3a3978d405eabfb772f70a7f80a92e0f07d230b)
+-Adição de níveis de permissão de administrador
+-Estabelecido o controle de edição e deleção para administradores
+-Estabelecido o a media das notas publicas de um jogo (Public Score)
+-Estabelecida a Site Review, que apenas administradores podem fazer
+-Adicionada a capacidade de tornar outros usuarios administradores
+-Limitada a capacidade de alterar reviews publicas apenas para quem as escreveu individualmente
 
 0.5 (75dfbd778f5db047283cf3f24c8d837a5da872df)
 -Reestruturação do sistema de usuário
