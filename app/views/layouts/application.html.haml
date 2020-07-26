@@ -8,25 +8,32 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     %header
-      =link_to 'Home', hdream_index_path
-      =link_to 'Games', '/games/'
-      =link_to 'Developers', '/developers/'
-      =link_to 'Platforms', '/platforms/'
-      =link_to 'Publishers', '/publishers/'
-      =link_to 'Users', '/users/'      
-      - if notice
-        %span.notice= notice
-      - if alert
-        %span.alert= alert  
-      =form_tag games_path, :method => "get" do
-        = label_tag :search, "Search for:"
-        = text_field_tag :search, params[:search]
-        = submit_tag "Search", :name =>nil
-      - if user_signed_in?
-        %strong= current_user.email
-        %button= link_to 'Editar', edit_user_registration_path
-        %button= link_to 'Sair', destroy_user_session_path, method: :delete
-      - else
-        %button= link_to 'Entrar', new_user_session_path
-        %button= link_to 'Cadastrar', new_user_registration_path
+      .hello
+        =link_to 'Home', hdream_index_path
+        |
+        =link_to 'Games', '/games/'
+        |
+        =link_to 'Developers', '/developers/'
+        |
+        =link_to 'Platforms', '/platforms/'
+        |
+        =link_to 'Publishers', '/publishers/'
+        |
+        =link_to 'Users', '/users/'      
+        =form_tag games_path, :method => "get" do
+          = label_tag :search, "Search for:"
+          = text_field_tag :search, params[:search]
+          = submit_tag "Search", :name =>nil
+      .users
+        - if notice
+          %span.notice= notice
+        - if alert
+          %span.alert= alert  
+        - if user_signed_in?
+          %strong= current_user.email
+          %button= link_to 'Editar', edit_user_registration_path
+          %button= link_to 'Sair', destroy_user_session_path, method: :delete
+        - else
+          %button= link_to 'Entrar', new_user_session_path
+          %button= link_to 'Cadastrar', new_user_registration_path
     = yield

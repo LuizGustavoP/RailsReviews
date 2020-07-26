@@ -12,4 +12,12 @@
  *
  *= require_tree .
  *= require_self
- */
+*/
+@import 'bootstrap';
+
+.hello{
+  text-align: center;
+}
+.users{
+  text-align: right;
+}

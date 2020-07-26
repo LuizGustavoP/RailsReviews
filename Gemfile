@@ -33,7 +33,7 @@ gem 'haml-rails', :group => 'development'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
-
+ gem 'bootstrap', '~> 4.3.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

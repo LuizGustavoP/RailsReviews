@@ -1,30 +1,34 @@
 %p#notice= notice
+.data
+  %p
+    %b Nome:
+    = @game.nome
+  %p
+    %b Site score:
+    = @game.score
+  %p
+    %b Developer:
+    - c = Developer.find(@game.developer_id).nome
+    = c
+  %p
+    %b Publisher:
+    - d = Publisher.find(@game.publisher_id).nome
+    = d
+  %p
+    %b Platform:
+    - c = Platform.find(@game.platform_id).nome
+    = c
 
-%p
-  %b Nome:
-  = @game.nome
-%p
-  %b Site score:
-  = @game.score
-%p
-  %b Developer:
-  - c = Developer.find(@game.developer_id).nome
-  = c
-%p
-  %b Publisher:
-  - d = Publisher.find(@game.publisher_id).nome
-  = d
-%p
-  %b Platform:
-  - c = Platform.find(@game.platform_id).nome
-  = c
-
-= link_to 'Write Review', :controller => 'previews', :action => 'new', :id => @game.id
-= link_to 'See Public Reviews', :controller => 'previews', :action => 'index', :id => @game.id
-= link_to 'See Site Review', :controller => 'oreviews', :action => 'show', :id => @game.id
--if current_user.admin?
-  = link_to 'Edit', edit_game_path(@game)
-  = link_to 'Write Site Review', :controller => 'oreviews', :action => 'new', :id => @game.id
+  = link_to 'Write Review', :controller => 'previews', :action => 'new', :id => @game.id
+  = link_to 'See Public Reviews', :controller => 'previews', :action => 'index', :id => @game.id
+  = link_to 'See Site Review', :controller => 'oreviews', :action => 'show', :id => @game.id
+  -if current_user.admin?
+    %p
+      .hi
+        = 'Opções para Admins e Mods:'
+        %p
+          = link_to 'Edit', edit_game_path(@game)
+          = link_to 'Write Site Review', :controller => 'oreviews', :action => 'new', :id => @game.id
 \|
 = link_to 'Back', games_path
 
